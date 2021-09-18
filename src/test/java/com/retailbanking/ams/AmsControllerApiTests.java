@@ -47,7 +47,7 @@ public class AmsControllerApiTests {
     @Test
     public void testCreateAccount() throws Exception {
         Mockito.when(mockAccountServiceImpl.createAccount(1)).thenReturn(true);
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/customers/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/accounts/1")
                         .param("customerId", "1"))
                 .andExpect(status().isOk());
     }
@@ -55,7 +55,7 @@ public class AmsControllerApiTests {
     @Test
     public void testCreateAccountButAlreadyExist() throws Exception {
         Mockito.when(mockAccountServiceImpl.createAccount(1)).thenReturn(false);
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/customers/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/accounts/1")
                         .param("customerId", "1"))
                 .andExpect(status().isOk());
 

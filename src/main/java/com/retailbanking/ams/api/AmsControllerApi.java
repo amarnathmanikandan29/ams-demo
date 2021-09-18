@@ -22,7 +22,7 @@ public class AmsControllerApi {
     @Autowired
     TransactionServiceImpl transactionServiceImpl;
 
-    @PostMapping(value = "/customers/{customerId}")
+    @PostMapping(value = "/accounts/{customerId}")
     public ResponseEntity<String> createAccount(@PathVariable("customerId") int customerId) throws Exception {
         try {
             Boolean result = accountServiceImpl.createAccount(customerId);
